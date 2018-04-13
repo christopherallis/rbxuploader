@@ -1,0 +1,17 @@
+{
+  "name": "rbxscriptuploader",
+  "version": "0.0.1",
+  "description": "Model that uploads text to server and sends client the key. Key is used to retrieve the data, but noly once.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kertopher Kent",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongodb": "^3.0.0-rc0"
+  }
+}
