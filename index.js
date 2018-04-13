@@ -3,7 +3,7 @@ var bodyParser = require("body-parser");
 var MongoClient = require('mongodb').MongoClient;
 
 var mongoUrl = process.env.MONGODB_URI;
-var dbName = "rbxscriptuploader";
+var dbName = "scriptdata";
 
 var app = express();
 
