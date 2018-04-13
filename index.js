@@ -2,7 +2,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var MongoClient = require('mongodb').MongoClient;
 
-var mongoUrl = 'mongodb://kert:kert@ds251845.mlab.com:51845/scriptdata';
+var mongoUrl = process.env.MONGODB_URI;
 var dbName = "rbxscriptuploader";
 
 var app = express();
