@@ -32,8 +32,8 @@ app.get('/health',function(req,res){
 
 app.get('/file',function(req,res){
 	var id = req.query.id;
-	MongoClient.connect(mongoUrl,function(err,db){
-		//var db = client.db(dbName);
+	MongoClient.connect(mongoUrl,function(err,client){
+		var db = client.db(dbName);
 		db.collection('Scripts').findOneAndDelete({id: id},function(err,doc){
 			if (!err){
 				if (doc && doc.value != null) {
@@ -54,7 +54,8 @@ app.post('/file',function(req,res){
 	var data = req.body.f;
 	if (data) {
 		var newID = getRandomID();
-		MongoClient.connect(mongoUrl,function(err,db){
+		MongoClient.connect(mongoUrl,function(err,client){
+			var db = client.db(dbName);
 			db.collection('Scripts').insertOne({
 				id: newID,
 				data: data
